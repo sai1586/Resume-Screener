@@ -26,18 +26,21 @@ Resume Screener is a web application designed to help teams analyze resumes agai
 ## Getting Started
 1. Clone the repository:
 	```bash
-	git clone <your-repo-url>
-	cd Resume_Screener
+	git clone git@github.com:sai1586/Resume-Screener.git
+	cd Resume-Screener
 	```
-2. Create a virtual environment and activate it:
+
+2. Build and run the application using Docker Compose:
 	```bash
-	python3 -m venv venv
-	source venv/bin/activate
+	docker-compose up --build
 	```
-3. Install dependencies:
-	```bash
-	pip install -r requirements.txt
+
+3. Access the application at:
 	```
+	http://localhost:1586
+	```
+
+No local Python setup is required. All dependencies and services run inside Docker containers.
 4. Run migrations:
 	```bash
 	python manage.py migrate
