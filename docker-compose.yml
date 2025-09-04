@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  web:
+  backend:
     build: .
     command: >
       python3 app/manage.py runserver 0.0.0.0:8000
@@ -9,3 +9,16 @@ services:
       - .:/app
     ports:
       - "1586:8000"
+    depends_on:
+      - frontend
+
+  frontend:
+    working_dir: /app/frontend
+    image: node:20
+    volumes:
+      - ./app/frontend:/app/frontend
+    ports:
+      - "3000:3000"
+    command: npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
