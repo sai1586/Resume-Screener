@@ -30,25 +30,17 @@ Resume Screener is a web application designed to help teams analyze resumes agai
 	cd Resume-Screener
 	```
 
-2. Build and run the application using Docker Compose:
+
+2. Build and run the application using Docker Compose (Django backend and React frontend):
 	```bash
 	docker-compose up --build
 	```
 
-3. Access the application at:
-	```
-	http://localhost:1586
-	```
+3. Access the applications at:
+	- Django backend: http://localhost:1586
+	- React frontend: http://localhost:3000
 
-No local Python setup is required. All dependencies and services run inside Docker containers.
-4. Run migrations:
-	```bash
-	python manage.py migrate
-	```
-5. Start the development server:
-	```bash
-	python manage.py runserver
-	```
+No local Python or Node setup is required. All dependencies and services run inside Docker containers.
 
 ## Usage
 - Log in and upload a resume and job description
