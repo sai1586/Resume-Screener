@@ -1,0 +1,15 @@
+node_modules
+build
+.env
+*.log
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.db.sqlite3
+coverage/
+frontend/node_modules
