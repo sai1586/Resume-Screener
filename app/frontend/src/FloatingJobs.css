@@ -1,0 +1,57 @@
+.App-header {
+  position: relative;
+  z-index: 10;
+}
+
+.floating-jobs-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  background: transparent; /* Make background transparent */
+}
+
+@keyframes floatJob {
+  0% {
+    top: 0;
+    opacity: 0.95;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0.95;
+  }
+}
+
+@keyframes floatJobFromTop {
+  0% {
+    transform: translateY(0);
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(40vh);
+    opacity: 0.2;
+  }
+}
+
+.floating-job-title {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  color: #0057b8; /* Accent blue, matches JS */
+  text-shadow: 0 2px 8px rgba(0, 87, 184, 0.12);
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+  opacity: 0.92;
+  /* animation is set inline from JS */
+}
