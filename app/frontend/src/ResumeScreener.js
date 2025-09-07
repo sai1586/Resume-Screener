@@ -11,13 +11,10 @@ function ResumeScreener() {
 
   const handleResumeUpload = (e) => {
     const file = e.target.files[0];
-    console.log('Resume file selected:', file);
     setResume(file);
-    setStep(2);
   };
 
   const handleJobDescChange = (e) => {
-    console.log('Job description updated:', e.target.value);
     setJobDesc(e.target.value);
   };
 
@@ -26,18 +23,15 @@ function ResumeScreener() {
     const formData = new FormData();
     formData.append('resume', resume);
     formData.append('job_description', jobDesc);
-    console.log('Starting analysis with:', { resume, jobDesc });
 
     try {
-  const response = await fetch(URLS.apiUploadResume, {
+      const response = await fetch(URLS.apiUploadResume, {
         method: 'POST',
         body: formData,
       });
-      console.log('Backend response:', response);
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      console.error('Error uploading resume or job description:', error);
       alert('Error uploading resume or job description.');
     }
   };

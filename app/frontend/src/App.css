@@ -21,6 +21,12 @@
   justify-content: center;
 }
 
+.vibrant-bg {
+  min-height: 100vh;
+  /* Remove background so .particle-bg is visible */
+  background: none;
+}
+
 .upload-container, .home-card {
   background: var(--soft-gray);
   border-radius: 20px;
@@ -86,6 +92,7 @@
   margin-bottom: 0.75rem;
   color: #fff;
 }
+
 .home-title span {
   background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 60%, #8b5cf6 100%);
   background-clip: text;
@@ -130,20 +137,24 @@
   box-shadow: 0 2px 8px rgba(0, 87, 184, 0.10);
   transition: background 0.2s, color 0.2s;
 }
+
 .upload-btn:disabled, .home-btn:disabled {
   background: var(--secondary-bg);
   color: var(--navy);
   cursor: not-allowed;
 }
+
 .upload-btn:hover:not(:disabled), .home-btn.primary:hover {
   background: var(--navy);
   color: var(--text-light);
 }
+
 .home-btn.secondary {
   background: var(--white);
   color: var(--accent-blue);
   border: 1.5px solid var(--accent-blue);
 }
+
 .home-btn.secondary:hover {
   background: var(--soft-gray);
   color: var(--navy);
@@ -195,4 +206,49 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.particle-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glass-modal {
+  background: rgba(255,255,255,0.08);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px 0 rgba(16, 23, 42, 0.18);
+  border: 1.5px solid rgba(255,255,255,0.20);
+  backdrop-filter: blur(12px);
+  background-clip: padding-box;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 60%, #8b5cf6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-btn.primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.home-btn.primary:hover {
+  background: linear-gradient(90deg, #22d3ee 0%, #3b82f6 100%);
+  transform: scale(1.05);
 }
