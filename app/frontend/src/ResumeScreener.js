@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './App.css';
+
+import { URLS } from './urls';
 
 
 function ResumeScreener() {
@@ -28,7 +29,7 @@ function ResumeScreener() {
     console.log('Starting analysis with:', { resume, jobDesc });
 
     try {
-      const response = await fetch('/api/upload_resume/', {
+  const response = await fetch(URLS.apiUploadResume, {
         method: 'POST',
         body: formData,
       });
